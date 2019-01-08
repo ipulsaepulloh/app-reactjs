@@ -44,61 +44,17 @@
   padding: 5px 5px;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-ul li {
-  margin: 0 auto;
-  width: 262px;
-  cursor: pointer;
-  position: relative;
-  padding: 12px 8px 12px 40px;
-  background: skyblue;
-  font-size: 18px;
-  transition: 0.2s;
-
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-ul li:nth-child(odd) {
-  background: skyblue;
-}
-
-ul li.checked {
-  margin: 0 auto;
-  width: 262px;
-  background: skyblue;
-  color: green;
-}
-
-ul li.checked::before {
-  content: '';
+.delBtn {
   position: absolute;
-  border-color: green;
-  border-style: solid;
-  border-width: 0 2px 2px 0;
-  top: 10px;
-  left: 16px;
-  transform: rotate(45deg);
-  height: 15px;
-  width: 7px;
+  right: 10;
+  top: 10;
+  padding: 1px 1px 1px 1px ;
+  color: black;
+  border-radius: 10px;
 }
 
-.close {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 12px 16px 12px 16px;
+.delBtn:hover {
   color: red;
-}
-
-.close:hover {
-  color: white;
 }
 
 input {
