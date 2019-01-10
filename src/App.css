@@ -7,21 +7,14 @@
   flex-direction: column;
   align-items: space-around;
   background-color: white;
-  border: 1px solid ;
+  border: 1px solid;
   padding: 0 5px;
   color: black;
   text-align: center;
-  width: 300px;
+  width: 600px;
   height: 570px;
   margin: 0 auto;
   border-radius: 10px;
-}
-
-.header:after {
-  content: "";
-  display: table;
-  clear: both;
-  padding: 1px 5px;
 }
 
 ul {
@@ -58,7 +51,7 @@ ul li.checked {
 }
 
 ul li.checked::before {
-  content: '';
+  content: "";
   position: absolute;
   border-color: green;
   border-style: solid;
@@ -82,36 +75,26 @@ ul li.checked::before {
   color: white;
 }
 
-input {
+.todo-input {
   margin: 10px 0px 10px 0;
-  border: 0.5px solid green;
+  border: 1px solid green;
   border-radius: 10px;
   width: 250px;
   padding: 10px;
-  float: left;
   font-size: 16px;
   cursor: pointer;
-  position: fixed;
-  bottom: 100px;
-  left: 498px;
 }
 
 .addBtn {
-  z-index: 1;
   margin: 10px 0px 10px 0;
-  padding: 5.5px;
-  width: 5%;
-  background: #2980B9;
+  padding: 5px 15px;
+  background: #2980b9;
   color: rgb(255, 255, 255);
-  float: left;
-  left: 725px;
   text-align: center;
   font-size: 25px;
   transition: 0.3s;
   border-radius: 100px;
   cursor: pointer;
-  position: fixed;
-  bottom: 100px;
 }
 
 .addBtn:hover {
