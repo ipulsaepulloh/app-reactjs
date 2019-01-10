@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import logo from "./logo.svg"
 import "./App.css"
 
 class App extends Component {
@@ -15,19 +14,28 @@ class App extends Component {
   }
 
   onSubmit = e => {
+    e.preventDefault()
     this.setState(prevState => ({
       todos: prevState.todos.concat({ text: this.state.todo, done: false }),
       todo: ""
     }))
   }
 
-  handleInputChange(event) {
+  handleCheckbox = event => {
     const target = event.target
-    const value = target.type === "checkbox" ? target.checked : target.value
-    const name = target.name
+    const name = Number(target.name)
+
+    const newTodos = this.state.todos.map((todo, index) => {
+      if (index === name) {
+        todo.done = !todo.done
+        return todo
+      } else {
+        return todo
+      }
+    })
 
     this.setState({
-      [name]: value
+      todos: newTodos
     })
   }
 
@@ -70,21 +78,18 @@ class App extends Component {
           </form>
 
           <ul>
-            {this.state.todos.map((todo, i) => (
-              <li key={i}>
-                <span
-                  onClick={() => this.finishTodo(i)}
-                  style={{ textDecoration: todo.done && "line-through" }}
-                >
+            {this.state.todos.map((todo, index) => (
+              <li key={index}>
+                <span style={{ textDecoration: todo.done && "line-through" }}>
                   {todo.text}
                 </span>
                 <input
-                  name="isGoing"
                   type="checkbox"
-                  checked={this.state.isGoing}
-                  onChange={this.handleInputChange}
+                  name={index}
+                  checked={todo.done}
+                  onChange={this.handleCheckbox}
                 />
-                <span onClick={() => this.deleteTodo(i)} className="delBtn">
+                <span onClick={() => this.deleteTodo(index)} className="delBtn">
                   x
                 </span>
               </li>
